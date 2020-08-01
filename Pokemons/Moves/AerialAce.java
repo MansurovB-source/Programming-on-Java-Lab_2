@@ -1,9 +1,6 @@
 package Moves;
 
-import ru.ifmo.se.pokemon.Effect;
-import ru.ifmo.se.pokemon.PhysicalMove;
-import ru.ifmo.se.pokemon.Pokemon;
-import ru.ifmo.se.pokemon.Type;
+import ru.ifmo.se.pokemon.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,5 +14,10 @@ public class AerialAce extends PhysicalMove {
     @Override
     protected void applySelfEffects(Pokemon pokemon) {
         pokemon.addEffect(new Effect().attack(100).turns(-1));
+    }
+
+    @Override
+    protected void applyOppDamage(Pokemon pokemon, double v) {
+        pokemon.setMod(Stat.HP, (int) Math.round(v));
     }
 }

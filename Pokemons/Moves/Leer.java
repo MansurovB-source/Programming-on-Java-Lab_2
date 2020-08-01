@@ -13,6 +13,6 @@ public class Leer extends StatusMove {
 
     @Override
     protected void applyOppEffects(Pokemon pokemon) {
-        pokemon.addEffect(new Effect().stat(Stat.DEFENSE, -1));
+        pokemon.setMod(Stat.DEFENSE, -1);
     }
 }
